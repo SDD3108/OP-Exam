@@ -1,3 +1,6 @@
+#ifndef FREE_STATE_H
+#define FREE_STATE_H
+
 // FreeState.h
 // Состояние свободного места.
 //
@@ -13,3 +16,5 @@
 // reserve переводит место в ReservedState.
 // purchase переводит место в PurchasedState.
 // block переводит место в BlockedState.
+
+#endif // FREE_STATE_H

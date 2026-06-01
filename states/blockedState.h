@@ -1,3 +1,6 @@
+#ifndef BLOCKED_STATE_H
+#define BLOCKED_STATE_H
+
 // BlockedState.h
 // Состояние места, заблокированного для технического обслуживания.
 //
@@ -11,3 +14,5 @@
 //
 // После действий:
 // unblock переводит место в FreeState.
+
+#endif // BLOCKED_STATE_H

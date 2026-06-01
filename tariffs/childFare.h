@@ -1,3 +1,6 @@
+#ifndef CHILD_FARE_H
+#define CHILD_FARE_H
+
 // ChildFare.h
 // Тариф для ребенка.
 //
@@ -9,3 +12,13 @@
 // Пример логики:
 // Если до рейса много времени — обычная скидка.
 // Если до рейса мало времени — цена может немного увеличиться.
+
+#include "fareStrategy.h";
+#include <string>
+
+class ChildFare : public FareStrategy {
+    public:
+        int calculateFinalPrice(int price,int hoursBeforeEvent) override;
+};
+
+#endif // CHILD_FARE_H

@@ -1,16 +1,28 @@
-// PassengerType.h
-// Здесь хранится тип пассажира.
-//
-// Что нужно сделать:
-// 1. Создать перечисление типов пассажира:
-//    - CHILD
-//    - STUDENT
-//    - ADULT
-//
-// Для чего нужно:
-// Тип пассажира определяет, какой тариф будет применяться.
-//
-// Например:
-// CHILD получает детскую скидку.
-// STUDENT получает студенческую скидку.
-// ADULT оплачивает полную стоимость.
+#ifndef PASSENGER_TYPE_H
+#define PASSENGER_TYPE_H
+#include <string>
+using namespace std;
+
+enum class PassengerType{
+    CHILD,
+    STUDENT,
+    ADULT,
+};
+
+string getPassengerType(PassengerType passenger){
+    switch(passenger){
+        case PassengerType::ADULT:
+            return "ADULT";
+        break;
+        case PassengerType::STUDENT:
+            return "STUDENT";
+        break;
+        case PassengerType::CHILD:
+            return "CHILD";
+        break;
+        default:
+            return "unknown";
+        break;
+    }
+}
+#endif // PASSENGER_TYPE_H

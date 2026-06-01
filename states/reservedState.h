@@ -1,3 +1,6 @@
+#ifndef RESERVED_STATE_H
+#define RESERVED_STATE_H
+
 // ReservedState.h
 // Состояние забронированного места.
 //
@@ -13,3 +16,5 @@
 // purchase переводит место в PurchasedState.
 // cancel переводит место обратно в FreeState.
 // block переводит место в BlockedState.
+
+#endif // RESERVED_STATE_H

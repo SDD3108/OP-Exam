@@ -1,3 +1,6 @@
+#ifndef SEAT_STATE_H
+#define SEAT_STATE_H
+
 // SeatState.h
 // Это базовый интерфейс состояния места.
 //
@@ -20,3 +23,5 @@
 // FreeState разрешает бронирование.
 // PurchasedState запрещает повторную покупку.
 // BlockedState запрещает бронирование.
+
+#endif // SEAT_STATE_H

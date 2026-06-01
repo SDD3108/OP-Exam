@@ -1,3 +1,6 @@
+#ifndef SEAT_H
+#define SEAT_H
+
 // Seat.h
 // Здесь объявляется класс Seat.
 //
@@ -21,3 +24,5 @@
 // Важно:
 // Нельзя просто сделать seat.status = "reserved".
 // Состояние должно управляться через объект SeatState.
+
+#endif // SEAT_H

@@ -1,3 +1,6 @@
+#ifndef STUDENT_FARE_H
+#define STUDENT_FARE_H
+#include "fareStrategy.h"
 // StudentFare.h
 // Тариф для студента.
 //
@@ -8,3 +11,12 @@
 //
 // Можно добавить условие:
 // Студенческая скидка действует только при наличии типа STUDENT у пользователя.
+
+class StudentFare : public FareStrategy {
+    public:
+        int calculateFinalPrice(int price,int hoursBeforeEvent) override;
+};
+
+
+#endif // STUDENT_FARE_H
+

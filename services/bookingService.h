@@ -1,3 +1,6 @@
+#ifndef BOOKING_SERVICE_H
+#define BOOKING_SERVICE_H
+
 // BookingService.h
 // Здесь объявляется сервис бронирования.
 //
@@ -17,3 +20,5 @@
 // Именно BookingService отвечает за транзакцию.
 // То есть все шаги должны пройти успешно.
 // Если хотя бы один шаг не прошел — билет не создается.
+
+#endif // BOOKING_SERVICE_H

@@ -1,3 +1,9 @@
+#ifndef BOOKING_EXCEPTION_H
+#define BOOKING_EXCEPTION_H
+#include <iostream>
+#include <string>
+using namespace std;
+
 // BookingException.h
 // Здесь можно описать ошибки бронирования.
 //
@@ -12,3 +18,10 @@
 //
 // Для чего нужно:
 // Чтобы система не просто падала, а объясняла причину ошибки.
+
+class BookingException : public runtime_error{
+    public: 
+        BookingException(string& message):runtime_error(message){
+        };
+};
+#endif // BOOKING_EXCEPTION_H

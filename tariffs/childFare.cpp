@@ -10,3 +10,21 @@
 // Важно:
 // Конкретные проценты можно выбрать самостоятельно,
 // если они не указаны в задании.
+#include <iostream>
+#include <string>
+#include "childFare.h"
+using namespace std;
+
+int FareStrategy::calculateFinalPrice(int price,int hoursBeforeEvent){
+    int finalPrice = price;
+    int discount = 0.5;
+    if(hoursBeforeEvent <= 24){
+        discount = 1.2;
+    }
+    if(hoursBeforeEvent <= 168){
+        discount = 0.9;
+    }
+    finalPrice *= discount;
+
+    return finalPrice;
+}

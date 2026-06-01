@@ -1,3 +1,6 @@
+#ifndef PURCHASED_STATE_H
+#define PURCHASED_STATE_H
+
 // PurchasedState.h
 // Состояние выкупленного места.
 //
@@ -11,3 +14,5 @@
 //
 // Важно:
 // Это финальное состояние места после успешной покупки билета.
+
+#endif // PURCHASED_STATE_H

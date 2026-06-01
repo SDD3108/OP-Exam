@@ -1,3 +1,6 @@
+#ifndef FARE_STRATEGY_H
+#define FARE_STRATEGY_H
+
 // FareStrategy.h
 // Это базовый интерфейс для всех тарифов.
 //
@@ -14,3 +17,10 @@
 // студенческий или полный тариф.
 //
 // Он просто вызывает общий метод calculateFinalPrice.
+class FareStrategy{
+    public: 
+        FareStrategy(){};
+        virtual int calculateFinalPrice(int price,int hoursBeforeEvent);
+        ~FareStrategy() = default;
+};
+#endif // FARE_STRATEGY_H
