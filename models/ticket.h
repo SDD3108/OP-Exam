@@ -1,6 +1,6 @@
 #ifndef TICKET_H
 #define TICKET_H
-
+using namespace std;
 // Ticket.h
 // Здесь объявляется класс Ticket.
 //
@@ -21,5 +21,9 @@
 // Важно:
 // Ticket создается только после успешной оплаты.
 // Если оплата не прошла, Ticket создаваться не должен.
+
+class Ticket{
+
+};
 
 #endif // TICKET_H

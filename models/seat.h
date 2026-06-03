@@ -1,5 +1,8 @@
 #ifndef SEAT_H
 #define SEAT_H
+#include <string>
+#include <vector>
+#include "seatCategory.h";
 
 // Seat.h
 // Здесь объявляется класс Seat.
@@ -24,5 +27,13 @@
 // Важно:
 // Нельзя просто сделать seat.status = "reserved".
 // Состояние должно управляться через объект SeatState.
+
+class Seat{
+    private:
+        int id;
+        SeatCategory seatCategory;
+        double cost;
+        
+};
 
 #endif // SEAT_H

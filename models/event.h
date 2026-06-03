@@ -1,5 +1,8 @@
 #ifndef EVENT_H
 #define EVENT_H
+#include <string>
+#include <vector>
+using namespace std;
 
 // Event.h
 // Здесь объявляется класс Event.
@@ -23,5 +26,12 @@
 // Важно:
 // Время до события нужно для расчета тарифа.
 // Например, чем ближе время рейса, тем дороже может быть билет.
+
+class Event{
+    private:
+        int id;
+        string title;
+
+};
 
 #endif // EVENT_H

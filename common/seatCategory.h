@@ -25,19 +25,19 @@ string getSeatCategory(SeatCategory category){
         break;
     }
 }
-int getSeatCost(SeatCategory category){
+double getSeatCost(SeatCategory category){
     switch(category){
         case SeatCategory::VIP:
-            return 10000;
+            return 10000.0;
         break;
         case SeatCategory::STANDARD:
-            return 3500;
+            return 3500.0;
         break;
         case SeatCategory::ECONOMY:
-            return 2500;
+            return 2500.0;
         break;
         default:
-            return -1;
+            return -1.0;
         break;
     }
 }
