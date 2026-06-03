@@ -1,3 +1,8 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include "ticket.h"
+using namespace std;
 // Ticket.cpp
 // Здесь реализуется логика Ticket.
 //

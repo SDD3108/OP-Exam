@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include "seat.h"
+using namespace std;
+
 // Seat.cpp
 // Здесь реализуется логика класса Seat.
 //

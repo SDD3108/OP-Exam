@@ -1,5 +1,9 @@
 #ifndef USER_H
 #define USER_H
+#include <string>
+using namespace std;
+
+#include "passengerType.h";
 
 // User.h
 // Здесь объявляется класс User.
@@ -25,5 +29,21 @@
 // Поле balance должно быть private.
 // Нельзя напрямую менять баланс снаружи.
 // Списание должно идти через отдельный метод.
+
+class User{
+    private:
+        int id;
+        string name;
+        double balance;
+        PassengerType passengerType;
+    public:
+        User(int i,string& n,double b,PassengerType pt){};
+        int getUserId() const;
+        string getUserName() const;
+        double getUserBalance() const;
+        bool haveEnoughMoney(double amount) const;
+        bool removeBalance(double amount);
+        bool addBalance(double amount);
+};
 
 #endif // USER_H
