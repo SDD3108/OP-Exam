@@ -34,5 +34,31 @@ chrono::system_clock::time_point Event::getStartTime() const {
     return startTime;
 };
 void Event::addSeat(Seat&& seat){
-    
+    seats.push_back(seat);
 };
+Seat* Event::findSeatByNumber(int number){
+    for(auto& seat : seats){
+        if(seat.getSeatNumber() == number){
+            return &seat;
+        };
+    };
+};
+int Event::getHoursBeforeEvent() const {
+    auto now = std::chrono::system_clock::now();
+    auto difference = startTime - now;
+    auto hours = std::chrono::duration_cast<std::chrono::hours>(difference);
+    return static_cast<int>(hours.count());
+}
+
+vector<Seat*> Event::getFreeSeats(){
+    vector<Seat*> freeSeats;
+    for(auto& seat : seats){
+        if(seat.isAvailable()){
+            freeSeats.push_back(&seat);
+        }
+    };
+    return freeSeats;
+};
+vector<Seat>& Event::getSeats(){
+    return seats;
+}

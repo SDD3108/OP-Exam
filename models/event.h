@@ -54,6 +54,8 @@ public:
     Seat* findSeatByNumber(int number);
 
     int getHoursBeforeEvent() const;
+    vector<Seat*> getFreeSeats();
+    vector<Seat>& getSeats();
 };
 
 #endif // EVENT_H

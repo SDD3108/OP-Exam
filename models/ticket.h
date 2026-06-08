@@ -1,6 +1,7 @@
 #ifndef TICKET_H
 #define TICKET_H
 using namespace std;
+#include "seatCategory.h"
 // Ticket.h
 // Здесь объявляется класс Ticket.
 //
@@ -23,7 +24,18 @@ using namespace std;
 // Если оплата не прошла, Ticket создаваться не должен.
 
 class Ticket{
+    private:
+        int ticket_id;
+        int user_id;
+        int event_id;
+        int seatNumber;
+        SeatCategory seatCategory;
+        double finalCost;
+        // ticket creating time
+    public:
+        Ticket(int ticket_id,int user_id,int event_id,int seatNumber,SeatCategory SeatCategory,double finalCost);
 
+    
 };
 
 #endif // TICKET_H
