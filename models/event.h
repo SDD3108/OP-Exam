@@ -27,11 +27,33 @@ using namespace std;
 // Время до события нужно для расчета тарифа.
 // Например, чем ближе время рейса, тем дороже может быть билет.
 
-class Event{
-    private:
-        int id;
-        string title;
+#pragma once
 
+#include <string>
+#include <vector>
+#include <chrono>
+#include "seat.h"
+using namespace std;
+class Event {
+private:
+    int id;
+    string title;
+    chrono::system_clock::time_point startTime;
+
+    vector<Seat> seats;
+
+public:
+    Event(int id, const string& title,chrono::system_clock::time_point startTime);
+
+    int getId() const;
+    string getTitle() const;
+
+    chrono::system_clock::time_point getStartTime() const;
+
+    void addSeat(Seat&& seat);
+    Seat* findSeatByNumber(int number);
+
+    int getHoursBeforeEvent() const;
 };
 
 #endif // EVENT_H
