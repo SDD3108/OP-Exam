@@ -1,6 +1,8 @@
 #ifndef SEAT_STATE_H
 #define SEAT_STATE_H
 
+#pragma once
+#include <string>
 // SeatState.h
 // Это базовый интерфейс состояния места.
 //
@@ -23,5 +25,19 @@
 // FreeState разрешает бронирование.
 // PurchasedState запрещает повторную покупку.
 // BlockedState запрещает бронирование.
+
+class Seat;
+class SeatState {
+    public:
+        SeatState();
+        virtual ~SeatState() = default;
+        virtual string getName() const = 0;
+        virtual bool isAvailable() const = 0;
+        virtual void reserve(Seat& seat) = 0;
+        virtual void purchase(Seat& seat) = 0;
+        virtual void cancel(Seat& seat) = 0;
+        virtual void block(Seat& seat) = 0;
+        virtual void unblock(Seat& seat) = 0;
+};
 
 #endif // SEAT_STATE_H
