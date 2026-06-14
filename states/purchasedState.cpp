@@ -2,7 +2,12 @@
 #include <string>
 #include <vector>
 #include "purchasedState.h"
-#include "seatState.h"
+#include "seat.h"
+
+#include "freeState.h"
+#include "purchasedState.h"
+#include "blockedState.h"
+
 using namespace std;
 
 // PurchasedState.cpp
@@ -24,16 +29,16 @@ bool PurchasedState::isAvailable() const{
     return false;
 };
 void PurchasedState::reserve(Seat& seat){
-
+    throw logic_error("Seat cannot be reserved, its already purchased");
 };
 void PurchasedState::purchase(Seat& seat){
     throw logic_error("Seat cannot be purchase, its already purchased");
 };
 void PurchasedState::cancel(Seat& seat){
-
+    throw logic_error("Seat cannot be canceled, refund logic is not success");
 };
 void PurchasedState::block(Seat& seat){
-
+    throw logic_error("Seat cannot be blocked, its already purchased");
 };
 void PurchasedState::unblock(Seat& seat){
     throw logic_error("Seat cannot be unblock, this seat is not blocked");

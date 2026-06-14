@@ -2,7 +2,12 @@
 #include <string>
 #include <vector>
 #include "reservedState.h"
-#include "seatState.h"
+#include "seat.h"
+
+#include "freeState.h"
+#include "purchasedState.h"
+#include "blockedState.h"
+
 using namespace std;
 
 // ReservedState.cpp
@@ -27,13 +32,13 @@ void ReservedState::reserve(Seat& seat){
     throw logic_error("Seat cannot be reserved, this seat is already reserved");
 };
 void ReservedState::purchase(Seat& seat){
-
+    seat.setState(make_unique<PurchasedState>());
 };
 void ReservedState::cancel(Seat& seat){
-
+    seat.setState(make_unique<ReservedState>());
 };
 void ReservedState::block(Seat& seat){
-
+    seat.setState(make_unique<BlockedState>());
 };
 void ReservedState::unblock(Seat& seat){
     throw logic_error("Seat cannot be unblock, this seat is not blocked");

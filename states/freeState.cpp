@@ -4,7 +4,6 @@
 #include <memory>
 #include <stdexcept>
 #include "freeState.h"
-#include "seatState.h"
 #include "seat.h"
 
 #include "reservedState.h"
@@ -32,16 +31,16 @@ bool FreeState::isAvailable() const {
     return true;
 };
 void FreeState::reserve(Seat& seat){
-
+    seat.setState(make_unique<ReservedState>());
 };
 void FreeState::purchase(Seat& seat){
-
+    seat.setState(make_unique<PurchasedState>());
 };
 void FreeState::cancel(Seat& seat){
     throw logic_error("Seat cannot be canceled, seat is not reserved");
 };
 void FreeState::block(Seat& seat){
-
+    seat.setState(make_unique<BlockedState>());
 };
 void FreeState::unblock(Seat& seat){
     throw logic_error("Seat cannot be unblock, its already free");

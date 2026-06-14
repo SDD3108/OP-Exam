@@ -22,13 +22,14 @@ using namespace std;
 // block переводит место в BlockedState.
 
 class ReservedState : public SeatState{
-    string getName() const override;
-    bool isAvailable() const override;
-    void reserve(Seat& seat) override;
-    void purchase(Seat& seat) override;
-    void cancel(Seat& seat) override;
-    void block(Seat& seat) override;
-    void unblock(Seat& seat) override;
+    public:
+        string getName() const override;
+        bool isAvailable() const override;
+        void reserve(Seat& seat) override;
+        void purchase(Seat& seat) override;
+        void cancel(Seat& seat) override;
+        void block(Seat& seat) override;
+        void unblock(Seat& seat) override;
 };
 
 #endif // RESERVED_STATE_H

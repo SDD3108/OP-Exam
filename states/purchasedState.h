@@ -20,13 +20,14 @@ using namespace std;
 // Это финальное состояние места после успешной покупки билета.
 
 class PurchasedState : public SeatState{
-    string getName() const override;
-    bool isAvailable() const override;
-    void reserve(Seat& seat) override;
-    void purchase(Seat& seat) override;
-    void cancel(Seat& seat) override;
-    void block(Seat& seat) override;
-    void unblock(Seat& seat) override;
+    public:
+        string getName() const override;
+        bool isAvailable() const override;
+        void reserve(Seat& seat) override;
+        void purchase(Seat& seat) override;
+        void cancel(Seat& seat) override;
+        void block(Seat& seat) override;
+        void unblock(Seat& seat) override;
 };
 
 #endif // PURCHASED_STATE_H
