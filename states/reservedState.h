@@ -1,6 +1,10 @@
 #ifndef RESERVED_STATE_H
 #define RESERVED_STATE_H
 
+#include "seatState.h"
+#include <string>
+using namespace std;
+
 // ReservedState.h
 // Состояние забронированного места.
 //
@@ -16,5 +20,15 @@
 // purchase переводит место в PurchasedState.
 // cancel переводит место обратно в FreeState.
 // block переводит место в BlockedState.
+
+class ReservedState : public SeatState{
+    string getName() const override;
+    bool isAvailable() const override;
+    void reserve(Seat& seat) override;
+    void purchase(Seat& seat) override;
+    void cancel(Seat& seat) override;
+    void block(Seat& seat) override;
+    void unblock(Seat& seat) override;
+};
 
 #endif // RESERVED_STATE_H

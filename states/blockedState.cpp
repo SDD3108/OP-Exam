@@ -1,3 +1,9 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include "blockedState.h"
+using namespace std;
+
 // BlockedState.cpp
 // Здесь реализуется поведение заблокированного места.
 //

@@ -3,6 +3,8 @@
 
 #pragma once
 #include <string>
+using namespace std;
+
 // SeatState.h
 // Это базовый интерфейс состояния места.
 //

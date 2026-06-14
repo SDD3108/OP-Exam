@@ -1,6 +1,9 @@
 #ifndef FREE_STATE_H
 #define FREE_STATE_H
 
+#include "seatState.h"
+#include <string>
+using namespace std;
 // FreeState.h
 // Состояние свободного места.
 //
@@ -16,5 +19,16 @@
 // reserve переводит место в ReservedState.
 // purchase переводит место в PurchasedState.
 // block переводит место в BlockedState.
+
+class FreeState : public SeatState{
+    string getName() const override;
+    bool isAvailable() const override;
+    void reserve(Seat& seat) override;
+    void purchase(Seat& seat) override;
+    void cancel(Seat& seat) override;
+    void block(Seat& seat) override;
+    void unblock(Seat& seat) override;
+};
+
 
 #endif // FREE_STATE_H
