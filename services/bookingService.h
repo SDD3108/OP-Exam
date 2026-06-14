@@ -1,6 +1,15 @@
 #ifndef BOOKING_SERVICE_H
 #define BOOKING_SERVICE_H
 
+#include <string>
+
+#include "user.h"
+#include "models/event.h"
+#include "seat.h"
+#include "fareStrategy.h"
+#include "ticket.h"
+
+using namespace std;
 // BookingService.h
 // Здесь объявляется сервис бронирования.
 //
@@ -20,5 +29,15 @@
 // Именно BookingService отвечает за транзакцию.
 // То есть все шаги должны пройти успешно.
 // Если хотя бы один шаг не прошел — билет не создается.
+
+class BookingService{
+    private:
+        int nextTicketId;
+        int generateTicketId();
+    public:
+        BookingService();
+        Ticket bookSeat(User& user,Event& event,Seat& seat,FareStrategy& fare);
+
+};
 
 #endif // BOOKING_SERVICE_H

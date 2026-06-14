@@ -43,7 +43,7 @@ private:
     SeatCategory category;
 
     double basePrice;
-    std::unique_ptr<SeatState> state;
+    unique_ptr<SeatState> state;
 
 public:
     Seat(int number,SeatCategory category,double basePrice,std::unique_ptr<SeatState> initialState);
@@ -54,7 +54,7 @@ public:
     int getSeatNumber() const;
     SeatCategory getCategory() const;
     double getBasePrice() const;
-    std::string getStateName() const;
+    string getStateName() const;
     bool isAvailable() const;
     void setState(std::unique_ptr<SeatState> newState);
 

@@ -29,33 +29,29 @@ using namespace std;
 
 #pragma once
 
-#include <string>
-#include <vector>
 #include <chrono>
 #include "seat.h"
 using namespace std;
 class Event {
-private:
-    int id;
-    string title;
-    chrono::system_clock::time_point startTime;
+    private:
+        int id;
+        string title;
+        chrono::system_clock::time_point startTime;
+        vector<Seat> seats;
+    public:
+        Event(int id, const string& title,chrono::system_clock::time_point startTime);
 
-    vector<Seat> seats;
+        int getId() const;
+        string getTitle() const;
 
-public:
-    Event(int id, const string& title,chrono::system_clock::time_point startTime);
+        chrono::system_clock::time_point getStartTime() const;
 
-    int getId() const;
-    string getTitle() const;
+        void addSeat(Seat&& seat);
+        Seat* findSeatByNumber(int number);
 
-    chrono::system_clock::time_point getStartTime() const;
-
-    void addSeat(Seat&& seat);
-    Seat* findSeatByNumber(int number);
-
-    int getHoursBeforeEvent() const;
-    vector<Seat*> getFreeSeats();
-    vector<Seat>& getSeats();
+        int getHoursBeforeEvent() const;
+        vector<Seat*> getFreeSeats();
+        vector<Seat>& getSeats();
 };
 
 #endif // EVENT_H
