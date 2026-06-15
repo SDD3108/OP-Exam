@@ -76,12 +76,7 @@ int main() {
 
         cout << "checking buying the same seat again " << endl;
 
-        Ticket secondTicket = bookingService.bookSeat(
-            user,
-            event,
-            *selectedSeat,
-            selectedFare
-        );
+        Ticket secondTicket = bookingService.bookSeat(user,event,*selectedSeat,selectedFare);
         secondTicket.printTicket();
 
     }
