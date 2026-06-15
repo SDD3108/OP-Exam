@@ -37,7 +37,7 @@ class User{
         double balance;
         PassengerType passengerType;
     public:
-        User(int i,string& n,double b,PassengerType pt){};
+        User(int i,const string& n,double b,PassengerType pt){};
         int getUserId() const;
         string getUserName() const;
         double getUserBalance() const;

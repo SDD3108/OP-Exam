@@ -83,17 +83,7 @@ Ticket BookingService::bookSeat(User& user,Event& event,Seat& seat,FareStrategy&
     }
     seat.purchase();
 
-    // 8. Создать объект Ticket.
-    Ticket ticket(
-        generateTicketId(),
-        user.getUserId(),
-        event.getId(),
-        seat.getSeatNumber(),
-        seat.getCategory(),
-        finalPrice,
-        chrono::system_clock::now()
-    );
+    Ticket ticket(generateTicketId(),user.getUserId(),event.getId(),seat.getSeatNumber(),seat.getCategory(),finalPrice,chrono::system_clock::now());
 
-    // 9. Вернуть созданный билет.
     return ticket;
 }
