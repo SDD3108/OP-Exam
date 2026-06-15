@@ -9,7 +9,7 @@ enum class PassengerType{
     ADULT,
 };
 
-string getPassengerType(PassengerType passenger){
+inline string getPassengerType(PassengerType passenger){
     switch(passenger){
         case PassengerType::ADULT:
             return "ADULT";

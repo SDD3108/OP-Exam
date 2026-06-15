@@ -3,26 +3,15 @@
 #include <vector>
 #include <memory>
 #include <stdexcept>
-#include "freeState.h"
-#include "seat.h"
+#include "states/freeState.h"
+#include "models/seat.h"
 
-#include "reservedState.h"
-#include "purchasedState.h"
-#include "blockedState.h"
+#include "states/reservedState.h"
+#include "states/purchasedState.h"
+#include "states/blockedState.h"
 
 using namespace std;
 
-// FreeState.cpp
-// Здесь реализуются переходы из состояния FreeState.
-//
-// Что нужно реализовать:
-// 1. При reserve изменить состояние места на ReservedState.
-// 2. При purchase изменить состояние места на PurchasedState.
-// 3. При block изменить состояние места на BlockedState.
-// 4. При невозможных действиях выбросить ошибку или вернуть false.
-//
-// Главная цель:
-// Разрешить операции только для свободного места.
 
 string FreeState::getName() const {
     return "Free";

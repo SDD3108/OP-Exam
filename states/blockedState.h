@@ -1,22 +1,8 @@
 #ifndef BLOCKED_STATE_H
 #define BLOCKED_STATE_H
 #include <string>
-#include "seatState.h"
+#include "states/seatState.h"
 using namespace std;
-
-// BlockedState.h
-// Состояние места, заблокированного для технического обслуживания.
-//
-// Что разрешено:
-// 1. Можно разблокировать место.
-//
-// Что запрещено:
-// 1. Нельзя бронировать.
-// 2. Нельзя покупать.
-// 3. Нельзя отменять бронь, если место просто заблокировано.
-//
-// После действий:
-// unblock переводит место в FreeState.
 
 class BlockedState : public SeatState{
     public:

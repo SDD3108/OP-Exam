@@ -1,27 +1,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "blockedState.h"
-#include "seat.h"
+#include "states/blockedState.h"
+#include "models/seat.h"
 
-#include "freeState.h"
-#include "reservedState.h"
-#include "purchasedState.h"
-
-
+#include "states/freeState.h"
+#include "states/reservedState.h"
+#include "states/purchasedState.h"
 using namespace std;
-
-// BlockedState.cpp
-// Здесь реализуется поведение заблокированного места.
-//
-// Что нужно реализовать:
-// 1. reserve запрещен.
-// 2. purchase запрещен.
-// 3. cancel запрещен.
-// 4. unblock переводит место в FreeState.
-//
-// Главная цель:
-// Не дать пользователю купить технически недоступное место.
 
 string BlockedState::getName() const{
     return "Blocked";

@@ -1,28 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "seat.h"
-#include "seatState.h"
+#include "models/seat.h"
+#include "states/seatState.h"
 using namespace std;
-
-// Seat.cpp
-// Здесь реализуется логика класса Seat.
-//
-// Что нужно реализовать:
-// 1. Конструктор места.
-// 2. Метод получения номера места.
-// 3. Метод получения категории.
-// 4. Метод получения базовой цены.
-// 5. Метод проверки доступности.
-// 6. Метод изменения состояния.
-//
-// Важно:
-// Seat не должен сам решать всю бизнес-логику.
-// Он должен делегировать действия объекту SeatState.
-//
-// Например:
-// Если место свободно, его можно забронировать.
-// Если место уже выкуплено, повторная бронь запрещена.
 
 Seat::Seat(
     int number,
@@ -33,7 +14,7 @@ Seat::Seat(
     : number(number),
       category(category),
       basePrice(basePrice),
-      state(move(initialState)) {}
+      state(std::move(initialState)) {}
 
 int Seat::getSeatNumber() const {
     return number;
@@ -56,7 +37,7 @@ bool Seat::isAvailable() const {
 }
 
 void Seat::setState(unique_ptr<SeatState> newState) {
-    state = move(newState);
+    state = std::move(newState);
 }
 void Seat::reserve(){
     state->reserve(*this);

@@ -3,59 +3,18 @@
 #include <vector>
 #include <chrono>
 
-#include "seatState.h"
-#include "seatCategory.h"
-#include "passengerType.h"
-#include "fareStrategy.h"
-#include "childFare.h"
-#include "studentFare.h"
-#include "fullFare.h"
-#include "bookingService.h"
-#include "user.h"
-#include "purchasedState.h"
-#include "ticket.h"
-
+#include "states/seatState.h"
+#include "common/seatCategory.h"
+#include "common/passengerType.h"
+#include "tariffs/fareStrategy.h"
+#include "tariffs/childFare.h"
+#include "tariffs/studentFare.h"
+#include "tariffs/fullFare.h"
+#include "services/bookingService.h"
+#include "models/user.h"
+#include "states/purchasedState.h"
+#include "models/ticket.h"
 using namespace std;
-
-// BookingService.cpp
-// Здесь реализуется основная логика покупки / бронирования билета.
-//
-// Последовательность bookSeat:
-//
-// 1. Проверить, что место доступно.
-//    Если место не FreeState, выбросить ошибку или вернуть отказ.
-//
-// 2. Получить базовую цену места.
-//    Базовая цена зависит от категории:
-//    VIP, STANDARD, ECONOMY.
-//
-// 3. Рассчитать финальную цену через FareStrategy.
-//    Например:
-//    ChildFare, StudentFare, FullFare.
-//
-// 4. Проверить баланс пользователя.
-//    Если денег недостаточно, операция отменяется.
-//
-// 5. Списать деньги с баланса пользователя.
-//    Баланс нельзя менять напрямую.
-//
-// 6. Перевести место в PurchasedState.
-//    Потому что по ТЗ метод bookSeat списывает деньги
-//    и генерирует Ticket.
-//
-// 7. Создать объект Ticket.
-//    Ticket должен содержать:
-//    - пользователя;
-//    - событие;
-//    - место;
-//    - категорию места;
-//    - финальную цену.
-//
-// 8. Вернуть Ticket.
-//
-// Важно:
-// Повторный вызов bookSeat для того же места должен быть невозможен,
-// потому что состояние места уже будет PurchasedState.
 
 BookingService::BookingService():nextTicketId(1){};
 

@@ -1,62 +1,49 @@
-#include <iostream>
+#include "event.h"
+
+#include <utility>
 #include <string>
 #include <vector>
-#include "event.h"
-#include <chrono>
-#include "seat.h"
 using namespace std;
 
-// Event.cpp
-// Здесь реализуется логика Event.
-//
-// Что нужно реализовать:
-// 1. Конструктор события.
-// 2. Добавление мест.
-// 3. Поиск места по номеру.
-// 4. Получение времени начала события.
-// 5. Получение списка свободных мест.
-//
-// Важно:
-// Event не должен списывать деньги.
-// Event не должен создавать Ticket.
-// Это задача BookingService.
-
-Event::Event(int id, const string& title,chrono::system_clock::time_point startTime){
+Event::Event(int id,const string& title,chrono::system_clock::time_point startTime):id(id),title(title),startTime(startTime){
 
 };
-int Event::getId() const {
+int Event::getId() const{
     return id;
 };
-string Event::getTitle() const {
+string Event::getTitle() const{
     return title;
 };
 chrono::system_clock::time_point Event::getStartTime() const {
     return startTime;
 };
 void Event::addSeat(Seat&& seat){
-    seats.push_back(seat);
+    seats.push_back(std::move(seat));
 };
+
 Seat* Event::findSeatByNumber(int number){
     for(auto& seat : seats){
         if(seat.getSeatNumber() == number){
             return &seat;
-        };
+        }
     };
+    return nullptr;
 };
-int Event::getHoursBeforeEvent() const {
-    auto now = std::chrono::system_clock::now();
-    auto difference = startTime - now;
-    auto hours = std::chrono::duration_cast<std::chrono::hours>(difference);
-    return static_cast<int>(hours.count());
-}
 
+int Event::getHoursBeforeEvent() const{
+    auto now = chrono::system_clock::now();
+    auto difference = startTime - now;
+    auto hours = chrono::duration_cast<chrono::hours>(difference);
+
+    return static_cast<int>(hours.count());
+};
 vector<Seat*> Event::getFreeSeats(){
     vector<Seat*> freeSeats;
     for(auto& seat : seats){
         if(seat.isAvailable()){
             freeSeats.push_back(&seat);
         }
-    };
+    }
     return freeSeats;
 };
 vector<Seat>& Event::getSeats(){

@@ -1,18 +1,11 @@
 #include <iostream>
 #include <string>
-#include "studentFare.h"
-// StudentFare.cpp
-// Здесь реализуется расчет студенческого тарифа.
-//
-// Что нужно реализовать:
-// 1. Взять базовую цену.
-// 2. Применить студенческую скидку.
-// 3. Учитывать время до события.
-// 4. Вернуть финальную цену.
+#include "tariffs/studentFare.h"
 
-int FareStrategy::calculateFinalPrice(int price,int hoursBeforeEvent){
-    int finalPrice = price;
-    int discount = 0.7;
+
+double StudentFare::calculateFinalPrice(double price,int hoursBeforeEvent) const {
+    double finalPrice = price;
+    double discount = 0.7;
     if(hoursBeforeEvent <= 24){
         discount = 1.2;
     }
@@ -22,4 +15,7 @@ int FareStrategy::calculateFinalPrice(int price,int hoursBeforeEvent){
     finalPrice *= discount;
 
     return finalPrice;
+}
+string StudentFare::getName() const {
+    return "Student";
 }

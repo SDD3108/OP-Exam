@@ -1,26 +1,13 @@
 #ifndef FARE_STRATEGY_H
 #define FARE_STRATEGY_H
+#include <string>
+using namespace std;
 
-// FareStrategy.h
-// Это базовый интерфейс для всех тарифов.
-//
-// Что нужно сделать:
-// 1. Описать общий метод расчета цены.
-// 2. Метод должен принимать:
-//    - базовую цену места;
-//    - время до события;
-//    - возможно, категорию места;
-//    - возможно, данные пользователя.
-//
-// Для чего нужен полиморфизм:
-// BookingService не должен знать, как именно считается детский,
-// студенческий или полный тариф.
-//
-// Он просто вызывает общий метод calculateFinalPrice.
 class FareStrategy{
     public: 
         FareStrategy(){};
-        virtual int calculateFinalPrice(int price,int hoursBeforeEvent);
+        virtual double calculateFinalPrice(double price,int hoursBeforeEvent) const = 0;
+        virtual string getName() const = 0;
         ~FareStrategy() = default;
 };
 #endif // FARE_STRATEGY_H

@@ -1,26 +1,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "purchasedState.h"
-#include "seat.h"
+#include "states/purchasedState.h"
+#include "models/seat.h"
 
-#include "freeState.h"
-#include "purchasedState.h"
-#include "blockedState.h"
+#include "states/freeState.h"
+#include "states/purchasedState.h"
+#include "states/blockedState.h"
 
 using namespace std;
 
-// PurchasedState.cpp
-// Здесь реализуется поведение выкупленного места.
-//
-// Что нужно реализовать:
-// 1. Любая попытка reserve должна быть запрещена.
-// 2. Любая попытка purchase должна быть запрещена.
-// 3. cancel можно запретить, если возвраты не предусмотрены.
-// 4. block обычно тоже можно запретить, потому что место уже продано.
-//
-// Главная цель:
-// Защитить систему от двойной продажи одного места.
 
 string PurchasedState::getName() const{
     return "Purchased";

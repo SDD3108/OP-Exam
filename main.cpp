@@ -7,41 +7,19 @@
 #include <iomanip>
 #include <ctime>
 
-#include "seatCategory.h"
-#include "seatState.h"
-#include "seat.h"
-#include "event.h"
-#include "user.h"
-#include "fareStrategy.h"
-#include "bookingService.h"
-#include "freeState.h"
-#include "childFare.h"
-#include "studentFare.h"
-#include "fullFare.h"
+#include "common/seatCategory.h"
+#include "states/seatState.h"
+#include "models/seat.h"
+#include "models/event.h"
+#include "models/user.h"
+#include "tariffs/fareStrategy.h"
+#include "services/bookingService.h"
+#include "states/freeState.h"
+#include "tariffs/childFare.h"
+#include "tariffs/studentFare.h"
+#include "tariffs/fullFare.h"
 
 using namespace std;
-
-// main.cpp
-// Здесь создается тестовый сценарий работы системы.
-//
-// Что нужно сделать:
-// 1. Создать пользователя с балансом.
-// 2. Создать событие: рейс, поезд или киносеанс.
-// 3. Добавить в событие несколько мест разных категорий:
-//    - VIP
-//    - Standard
-//    - Economy
-// 4. Создать тариф:
-//    - детский
-//    - студенческий
-//    - полный
-// 5. Создать BookingService.
-// 6. Попробовать забронировать / купить место.
-// 7. Проверить, что:
-//    - баланс пользователя уменьшился;
-//    - билет создался;
-//    - состояние места изменилось;
-//    - повторное бронирование того же места невозможно.
 
 int main() {
     try{

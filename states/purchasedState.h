@@ -2,22 +2,9 @@
 #define PURCHASED_STATE_H
 
 #include <string>
-#include "seatState.h"
+#include "states/seatState.h"
 using namespace std;
 
-// PurchasedState.h
-// Состояние выкупленного места.
-//
-// Что разрешено:
-// Обычно ничего, кроме просмотра статуса.
-//
-// Что запрещено:
-// 1. Нельзя повторно забронировать.
-// 2. Нельзя повторно купить.
-// 3. Нельзя сделать свободным без отдельной логики возврата.
-//
-// Важно:
-// Это финальное состояние места после успешной покупки билета.
 
 class PurchasedState : public SeatState{
     public:

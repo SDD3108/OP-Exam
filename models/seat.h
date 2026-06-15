@@ -2,39 +2,14 @@
 #define SEAT_H
 #include <string>
 #include <vector>
-#include "seatCategory.h";
-
-// Seat.h
-// Здесь объявляется класс Seat.
-//
-// Что должен хранить Seat:
-// 1. Номер места.
-// 2. Категорию места:
-//    - VIP;
-//    - STANDARD;
-//    - ECONOMY.
-// 3. Базовую стоимость места.
-// 4. Текущее состояние места через State Pattern.
-//
-// Что должен уметь Seat:
-// 1. Возвращать номер места.
-// 2. Возвращать категорию.
-// 3. Возвращать базовую стоимость.
-// 4. Возвращать текущее состояние.
-// 5. Менять состояние только через разрешенные методы.
-// 6. Проверять, доступно ли место для бронирования.
-//
-// Важно:
-// Нельзя просто сделать seat.status = "reserved".
-// Состояние должно управляться через объект SeatState.
 
 #pragma once
 
 #include <memory>
 #include <string>
 
-#include "seatCategory.h"
-#include "seatState.h"
+#include "common/seatCategory.h"
+#include "states/seatState.h"
 using namespace std;
 
 class Seat {
