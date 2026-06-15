@@ -1,4 +1,15 @@
-#include "event.h"
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <chrono>
+#include <memory>
+#include <iomanip>
+#include <ctime>
+
+#include "seatCategory.h"
+#include "seatState.h"
+
 // main.cpp
 // Здесь создается тестовый сценарий работы системы.
 //
@@ -20,4 +31,5 @@
 //    - билет создался;
 //    - состояние места изменилось;
 //    - повторное бронирование того же места невозможно.
+
 
